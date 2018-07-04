@@ -16,7 +16,7 @@ use Predis\Client;
  * @method  bool unlock(string $key) 释放独占锁
  * @package App\Utils
  */
-class Lock
+class RedLock
 {
     private $locked_keys = [];
 
@@ -59,10 +59,11 @@ class Lock
      * @param     bool $guard 是否自动释放
      * @redis_key
      * @return    bool
+     * @throws \Exception
      */
     private function __lock(string $key, int $ttl = 0, bool $guard = false)
     {
-        $redis = $this->redis;
+        $redis = $this->redis->pipeline();
 
         //因为redis整数对象有缓存，此处value使用1
         $redis->setnx($key, 1);
@@ -114,7 +115,7 @@ class Lock
     {
         foreach ($this->locked_keys as $locked_key) {
             if (!$locked_key['guard']) {
-                $this->unlock($locked_key['key']);
+                $this->__unlock($locked_key['key']);
             }
         }
     }

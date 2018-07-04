@@ -12,7 +12,8 @@
   "require": {
     "predis/predis": "^1.0",
     "phpdocumentor/reflection-docblock": "3.0.2",
-    "phpunit/phpunit": "*"
+    "phpunit/phpunit": "*",
+    "mockery/mockery": "*"
   },
   "autoload": {
     "psr-4": {"Lxj\\RedLock\\": "src/"}
