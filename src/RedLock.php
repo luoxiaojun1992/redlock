@@ -155,4 +155,9 @@ class RedLock
 
         return null;
     }
+
+    public function __destruct()
+    {
+        $this->flushAll();
+    }
 }
