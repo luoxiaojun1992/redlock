@@ -6,7 +6,7 @@ use phpDocumentor\Reflection\DocBlockFactory;
 use Predis\Client;
 
 /**
- * Class Lock
+ * Class RedLock
  *
  * {@inheritdoc}
  *
