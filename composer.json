@@ -1,0 +1,29 @@
+{
+  "name": "luoxiaojun1992/redlock",
+  "description": "Redis Distribution Lock",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "predis/predis": "^1.0",
+    "phpdocumentor/reflection-docblock": "3.0.2",
+    "phpunit/phpunit": "*"
+  },
+  "autoload": {
+    "psr-4": {"Lxj\\RedLock\\": "src/"}
+  },
+  "repositories": [
+    {
+      "packagist": false
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  ]
+}
