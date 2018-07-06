@@ -14,7 +14,7 @@ use Predis\Client;
  *
  * @method  bool lock(string $key, int $ttl = 0, bool $guard = false) 加独占锁
  * @method  bool unlock(string $key) 释放独占锁
- * @package App\Utils
+ * @package Lxj\RedLock
  */
 class RedLock
 {
