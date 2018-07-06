@@ -80,5 +80,6 @@ class RedLockTest extends \PHPUnit\Framework\TestCase
     public function tearDown()
     {
         parent::tearDown();
+        M::close();
     }
 }
