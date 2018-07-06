@@ -24,10 +24,10 @@ class RedLockTest extends \PHPUnit\Framework\TestCase
         $pipeline = M::mock(\Predis\Pipeline\Pipeline::class);
         $pipeline->shouldReceive('setnx')
             ->with(self::PREFIX . self::KEY, 1)
-            ->andReturn('QUEUED');
+            ->andReturn($pipeline);
         $pipeline->shouldReceive('expire')
             ->with(self::PREFIX . self::KEY, self::TTL)
-            ->andReturn('QUEUED');
+            ->andReturn($pipeline);
         $pipeline->shouldReceive('execute')
             ->andReturn([1, 1]);
         $this->pipeline = $pipeline;
